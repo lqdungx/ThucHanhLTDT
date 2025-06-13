@@ -61,21 +61,16 @@ void Floyd(DOTHI g) {
 
 int main() {
     DOTHI g;
-    FILE *f = fopen("input.txt", "r");
-    if (f == NULL) {
-        printf("Khong the mo file input.txt\n");
-        return 1;
-    }
+    printf("Nhap so dinh: ");
+    scanf("%d", &g.n);
 
-    fscanf(f, "%d", &g.n);
+    printf("Nhap ma tran ke (%d x %d):\n", g.n, g.n);
     for (int i = 0; i < g.n; i++) {
         for (int j = 0; j < g.n; j++) {
-            fscanf(f, "%d", &g.a[i][j]);
+            scanf("%d", &g.a[i][j]);
         }
     }
-    fclose(f);
 
     Floyd(g);
     return 0;
 }
-
